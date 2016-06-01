@@ -9,4 +9,4 @@ You can choose from multiple themes, or make your own!
 - [ ] Code jQuery
 - [ ] Commit everything
 
-_Reminder: https://htmlpreview.github.io/
+_Reminder_: https://htmlpreview.github.io/
