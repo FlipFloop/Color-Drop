@@ -8,3 +8,5 @@ You can choose from multiple themes, or make your own!
 - [ ] Code CSS
 - [ ] Code jQuery
 - [ ] Commit everything
+
+_Reminder: https://htmlpreview.github.io/
