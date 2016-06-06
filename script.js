@@ -9,6 +9,9 @@ $(document).ready(function() {
   $('#options').change(function(){
     if($(this).val() == 'dark'){ 
       $("#game").css("backgroundColor", "#000000");
+      $("#player").css({
+        "background-color": "#FFFFFF" // using CSS function in case you want to add other stuff
+      });
     }
   });
   
