@@ -4,7 +4,7 @@ $(document).ready(function() {
     if($(this).val() == 'Dark'){ 
       $("#game").css("background-color", "#000");
       $("#player").css({
-        "background-color": "#FFF" // using CSS function in case you want to add other stuff
+        "background-color": "white" // using CSS function in case you want to add other stuff
       });
     }
   });
