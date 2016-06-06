@@ -5,20 +5,21 @@ body {
 .block {
   width: 60px;
   height: 60px;
-  position: relative;
+  position: absolute;
 }
 #game {
   width: 1000px;
   height: 550px;
   border: 3px solid #000000;
   margin: 2% 10%;
+  position: relative;
 }
 #player {
   width: 40px;
   height: 40px;
   left: 50%;
   bottom: 0;
-  position: relative;
+  position: absolute;
 }
 #play {
   padding: 1%;
