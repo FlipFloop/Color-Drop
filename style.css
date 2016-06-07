@@ -2,6 +2,11 @@ body {
   background-color: #FFFFFF;
   font-family: helvetica, sans-serif;
 }
+#main_title {
+  font-size: 4em;
+  color: #FFF;
+  text-shadow: 2px 2px #000;
+}
 .block {
   width: 60px;
   height: 60px;
