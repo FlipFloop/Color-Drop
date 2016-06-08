@@ -4,8 +4,8 @@ body {
 }
 #main_title {
   font-size: 4em;
-  color: #FFF;
-  text-shadow: 2px 2px #000;
+  color: #000;
+  text-shadow: 2px 2px #999999;
 }
 .block {
   width: 60px;
