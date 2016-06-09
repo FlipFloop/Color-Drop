@@ -16,9 +16,13 @@ $(document).ready(function() {
   });
   
   $("#play").click(function() {
-    $(this).hide();
-    $("#options").hide();
-    $("#player").show();
+    if($("#options").val != "none") {
+      $(this).hide();
+      $("#options").hide();
+      $("#player").show();
+    } else {
+      alert("You haven't selected a theme")
+    }
   });
   
   
