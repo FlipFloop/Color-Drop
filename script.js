@@ -16,9 +16,11 @@ $(document).ready(function() {
   });
 
   var game = function() {
-    $(document).keydown(function(event) {
-
-    };
+    $(document).keydown(function(event) { // keycodes: left = 37, right = 39
+      if (event.which == 37 || event.which == 81) { // left arrow
+        $("#player").css("left", "-5px")
+      }
+    });
   };
 
   $("#play").click(function() {
