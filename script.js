@@ -16,7 +16,7 @@ $(document).ready(function() {
   });
 
   $("#play").click(function() {
-    if($("#options").val() != "none") { // NOTE: not working
+    if($("#options").val() != "none") { 
       $(this).hide();
       $("#options").hide();
       $("#player").show();
