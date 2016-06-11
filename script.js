@@ -17,8 +17,15 @@ $(document).ready(function() {
 
   var game = function() {
     $(document).keydown(function(event) { // keycodes: left = 37, right = 39
+      if (event.which == 39 || event.which == 68) { // right arrow
+        if ( $("#player").position().left < $("#game").width()-$("#player").width() ) {
+		  		$("#player").css("left", "+=10");
+		  	}
+      }
       if (event.which == 37 || event.which == 81) { // left arrow
-        $("#player").css("left", "-5px")
+        if ( $("#player").position().left > $("#player").width() - 40 ) {
+		  		$("#player").css("left", "-=10");
+		  	}
       }
     });
   };
