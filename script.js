@@ -15,11 +15,20 @@ $(document).ready(function() {
     }
   });
 
+  var game = function() {
+    $(document).keydown(function(event) {
+
+    };
+  };
+
   $("#play").click(function() {
-    if($("#options").val() != "none") { 
+    if($("#options").val() != "none") {
       $(this).hide();
       $("#options").hide();
       $("#player").show();
+
+      game();
+
     } else {
       alert("You haven't selected a theme")
     }
