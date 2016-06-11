@@ -17,15 +17,15 @@ $(document).ready(function() {
 
   var game = function() {
     $(document).keydown(function(event) { // keycodes: left = 37, right = 39
-      if (event.which == 39 || event.which == 68) { // right arrow
+      if (event.which == 39 || event.which == 68) { // right arrow or D
         if ( $("#player").position().left < $("#game").width()-$("#player").width() ) {
-		$("#player").css("left", "+=10");
-	}
+		  		$("#player").css("left", "+=10");
+		  	}
       }
-      if (event.which == 37 || event.which == 81) { // left arrow
+      if (event.which == 37 || event.which == 81 || event.which == 65) { // left arrow or Q on AZERTY or A on QWERTY
         if ( $("#player").position().left > $("#player").width() - 40 ) {
-		$("#player").css("left", "-=10");
-	}
+		  		$("#player").css("left", "-=10");
+		  	}
       }
     });
   };
