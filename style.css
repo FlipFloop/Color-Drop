@@ -17,7 +17,8 @@ body {
   width: 1000px;
   height: 550px;
   border: 3px solid #000000;
-  margin: 2% 10%;
+  margin: 2% 0%;
+  left: calc((100% - 1000px)/2);/* this positions the game zone so that it is always at the center of a page, even if its position is relative*/
   position: relative;
 }
 #player {
