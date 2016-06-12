@@ -46,12 +46,12 @@ $(document).ready(function() {
 	  //floor with turn the number into an integer (whole number) ex: 3.2 => 3 3.6 => 3
 	  //this will give whole numbers between 0 and max-min : [0;max-min] since max-min+1 was excluded
 	  //+min will give use an integer between 0+min and max-min+min=max : [min; max]
-	}
+	};
 
 	function getRandomColor(){
 		//TODO: make it check that it is not the same as the background color
 		return '#'+(Math.random()*0xFFFFFF<<0).toString(16);
-	}
+	};
 
   function spawn_block(){
   	$spawned_block = $("<div class='block'></div>")
@@ -64,7 +64,20 @@ $(document).ready(function() {
   		"background-color": getRandomColor()
   	});
   	//if you want a random position from top add "top" : top,
-  }
+		/*if($spawned_block.position.top < $game.position.top + $game.height ) {
+			$spawned_block.css("top", "+=25px");
+		}*/
+
+  };
+	function anim() {
+    $("#game .block").each(function(index){
+        if($(this).position.top < $game.position.top + $game.height ) {
+            $(this).css("top", "+=25px");
+        }
+    });
+    window.requestAnimationFrame(anim);
+}
+
 
   $("#play").click(function() {
     if($("#options").val() != "none") {
@@ -75,6 +88,8 @@ $(document).ready(function() {
       game(); //start game engine
       var spawnBlockInterval = setInterval(function(){spawn_block();}, 3000); //run spawn_block every 3000ms=3s
       //to stop interval from running add: clearInterval(spawnBlockInterval);
+			window.requestAnimationFrame(anim);
+
 
     } else {
       alert("You haven't selected a theme")
