@@ -51,3 +51,36 @@ a {
 a:visited {
   text-decoration: none;
 }
+
+/*Theme Design*/
+/*Dark Theme*/
+#game.dark {
+	background-color: #000;
+}
+.dark #player {
+	background-color: #fff;
+}
+
+/*Light Theme*/
+#game.light {
+	background-color: #fff;
+}
+.light #player {
+	background-color: #000;
+}
+
+/*Blue White Theme*/
+#game.blue_white {
+	background-color: #0066ff;
+}
+.blue_white #player {
+	background-color: #fff;
+}
+
+/*Red White Theme*/
+#game.red_white {
+	background-color: #ff3333;
+}
+.red_white #player {
+	background-color: #fff;
+}
