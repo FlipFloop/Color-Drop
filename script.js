@@ -20,7 +20,7 @@ $(document).ready(function() {
       });
     }
     if($(this).val() === 'Red_White'){
-      $("#game").css("background-color", "#c0392b");
+      $("#game").css("background-color", "#ff3333");
       $("#player").css({
         "background-color": "#FFFFFF" // using CSS function in case you want to add other stuff
       });
