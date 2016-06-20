@@ -2,6 +2,9 @@ $(document).ready(function() {
 
 	var $game = $("#game")
 	var $player = $("#player")
+  // an array to add all blocks
+  // this array can be used to know how many blocks have been created since the begining of the game
+  var blocks = [];
 
   $('#options').change(function(){ // NOTE: all themes have capital letters on colors
     if($(this).val() === 'Dark'){
@@ -22,21 +25,6 @@ $(document).ready(function() {
     }
   });
 
-  var game = function() {
-    $(document).keydown(function(event) { // keycodes: left = 37, right = 39
-      if (event.which == 39 || event.which == 68) { // right arrow or D
-        if ( $player.position().left < $game.width()-$("#player").width() ) {
-		  		$player.css("left", "+=10");
-		  	}
-      }
-      if (event.which == 37 || event.which == 81 || event.which == 65) { // left arrow or Q on AZERTY or A on QWERTY
-        if ( $player.position().left > $("#player").width() - 40 ) {
-		  		$player.css("left", "-=10");
-		  	}
-      }
-    });
-  };
-
   function getRandomInt(min, max) {
 		//Returns a random integer between min (inclusive) and max (inclusive)
 		//Using Math.round() will give you a non-uniform distribution!
@@ -53,7 +41,19 @@ $(document).ready(function() {
 		return '#'+(Math.random()*0xFFFFFF<<0).toString(16);
 	}
 
-  function spawn_block(){
+  function descendBlock(block) {
+    var time_interval = getRandomInt(50, 200);
+    setInterval(function(){
+      block.css("top", "+=5px");
+      if ( block.position().top >= $('#game').height()-block.height() ) {
+        //block has reached the bottom
+        alert("A block has reached the bottom!");
+        block.remove();
+      }
+    }, time_interval);
+  }
+
+  function spawnBlock(){
   	$spawned_block = $("<div class='block'></div>")
   	$game.append($spawned_block); //add div with class block to #game div
   	var left=getRandomInt(0, $game.width()-$spawned_block.width()); //gets a random value from left of screen where div can appear
@@ -64,7 +64,30 @@ $(document).ready(function() {
   		"background-color": getRandomColor()
   	});
   	//if you want a random position from top add "top" : top,
+    //adds last spawned block to blocks array
+    blocks.push($spawned_block);
+    //passing in the object from the last created block into descendBlock function (blocks[0] is first element in array)
+    descendBlock(blocks[blocks.length-1]);
   }
+
+  var game = function() {
+    $(document).keydown(function(event) { // keycodes: left = 37, right = 39
+      if (event.which == 39 || event.which == 68) { // right arrow or D
+        if ( $player.position().left < $game.width()-$("#player").width() ) {
+          $player.css("left", "+=10");
+        }
+      }
+      if (event.which == 37 || event.which == 81 || event.which == 65) { // left arrow or Q on AZERTY or A on QWERTY
+        if ( $player.position().left > $("#player").width() - 40 ) {
+          $player.css("left", "-=10");
+        }
+      }
+    });
+
+    var spawnBlockInterval = setInterval(function(){spawnBlock();}, 3000); //run spawnBlock every 3000ms=3s
+    //to stop interval from running add: clearInterval(spawnBlockInterval);
+
+  };
 
   $("#play").click(function() {
     if($("#options").val() != "none") {
@@ -73,8 +96,6 @@ $(document).ready(function() {
       $player.show();
 
       game(); //start game engine
-      var spawnBlockInterval = setInterval(function(){spawn_block();}, 3000); //run spawn_block every 3000ms=3s
-      //to stop interval from running add: clearInterval(spawnBlockInterval);
 
     } else {
       alert("You haven't selected a theme")
