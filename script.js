@@ -92,7 +92,7 @@ $(document).ready(function() {
 
     $("#play").click(function() {
         if ($("#options").val() != "none") {
-            $(this).hide();
+            $("#play").hide();
             $("#options").hide();
             $player.show();
 
@@ -102,7 +102,8 @@ $(document).ready(function() {
             }, 3000); //run spawn_block every 3000ms=3s
             //to stop interval from running add: clearInterval(spawnBlockInterval);
             window.requestAnimationFrame(anim);
-
+            
+            endGame();
 
         } else {
             alert("You haven't selected a theme")
