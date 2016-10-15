@@ -79,16 +79,6 @@ $(document).ready(function() {
         window.requestAnimationFrame(anim);
     }
     
-    function endGame() {
-     $("#game .block").each(function(index) {
-            if ($(this).position().top + $(this).height() >= $player.position().top && $(this).position().left === $player.position().left) {
-                $("#game .block").each(function() {
-                    $(this).hide();
-                })
-            })
-        });   
-    }
-
 
     $("#play").click(function() {
         if ($("#options").val() != "none") {
@@ -103,7 +93,6 @@ $(document).ready(function() {
             //to stop interval from running add: clearInterval(spawnBlockInterval);
             window.requestAnimationFrame(anim);
             
-            //endGame();
 
         } else {
             alert("You haven't selected a theme")
