@@ -65,7 +65,7 @@ $(document).ready(function() {
         });
         //if you want a random position from top add "top" : top,
         if($spawned_block.position().top < $game.position().top + $game.height() ) {
-        	$spawned_block.css("top", "+=25px");
+        	$spawned_block.css("top", "+=5px");
         }
 
     };
@@ -77,6 +77,16 @@ $(document).ready(function() {
             }
         });
         window.requestAnimationFrame(anim);
+    }
+    
+    function endGame() {
+     $("#game .block").each(function(index) {
+            if ($(this).position().top < $player.position().top && $(this).position().left === $player.position().left) {
+                $("#game .block").each(function() {
+                    $(this).hide();
+                }
+            }
+        });   
     }
 
 
