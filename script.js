@@ -4,7 +4,7 @@ $(document).ready(function() {
     var $player = $("#player")
 
     $('#options').change(function() { // NOTE: all themes have capital letters on colors
-        if ($('#options).val() === 'Dark') {
+        if ($('#options).val() === 'Dark')) {
             $game.removeClass(); //removes all classes
             $game.addClass("dark"); //changes css theme
         }
