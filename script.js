@@ -64,7 +64,7 @@ $(document).ready(function() {
             "background-color": getRandomColor()
         });
         //if you want a random position from top add "top" : top,
-        if($spawned_block.position.top < $game.position.top + $game.height ) {
+        if($spawned_block.position().top < $game.position().top + $game.height ) {
         	$spawned_block.css("top", "+=25px");
         }
 
