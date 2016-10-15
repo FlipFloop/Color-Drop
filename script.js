@@ -85,7 +85,7 @@ $(document).ready(function() {
                 $("#game .block").each(function() {
                     $(this).hide();
                 })
-            }
+            })
         });   
     }
 
