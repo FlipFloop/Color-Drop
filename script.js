@@ -8,7 +8,7 @@ $(document).ready(function() {
             $game.removeClass(); //removes all classes
             $game.addClass("dark"); //changes css theme
         }
-        if ($('#options).val() === 'Light') {
+        if ($('#options').val() === 'Light') {
             $game.removeClass(); //removes all classes
             $game.addClass("light"); //changes css theme
         }
@@ -16,7 +16,7 @@ $(document).ready(function() {
             $game.removeClass(); //removes all classes
             $game.addClass("blue_white"); //changes css theme
         }
-        if ($('#options).val() === 'Red_White') {
+        if ($('#options').val() === 'Red_White') {
             $game.removeClass(); //removes all classes
             $game.addClass("red_white"); //changes css theme
         }
