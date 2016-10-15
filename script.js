@@ -84,7 +84,7 @@ $(document).ready(function() {
             if ($(this).position().top + $(this).height() >= $player.position().top && $(this).position().left === $player.position().left {
                 $("#game .block").each(function() {
                     $(this).hide();
-                }
+                })
             }
         });   
     }
