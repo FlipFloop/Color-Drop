@@ -103,7 +103,7 @@ $(document).ready(function() {
             //to stop interval from running add: clearInterval(spawnBlockInterval);
             window.requestAnimationFrame(anim);
             
-            endGame();
+            //endGame();
 
         } else {
             alert("You haven't selected a theme")
